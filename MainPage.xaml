@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Appetite.MauiDbClient.MainPage"
+             Title="Home">
+  <ScrollView>
+    <VerticalStackLayout Padding="30" Spacing="25">
+      <Image
+          Source="dotnet_bot.png"
+          HeightRequest="185"
+          Aspect="AspectFit"
+          SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+      <Label
+          Text="Hello!"
+          Style="{StaticResource Headline}"
+          SemanticProperties.HeadingLevel="Level1" />
+
+      <Label
+          Text="This is an C# maui client"
+          Style="{StaticResource SubHeadline}"
+          SemanticProperties.HeadingLevel="Level2"
+          SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+      <!-- Existing button example -->
+      
+
+      <!-- New Navigation Buttons -->
+      <Button Text="View Ingredients" 
+              Clicked="OnIngredientsClicked" 
+              HorizontalOptions="Fill"
+              FontAttributes="Bold" 
+              CornerRadius="5" 
+              HeightRequest="50" />
+
+      <Button Text="View Recipes" 
+              Clicked="OnRecipesClicked" 
+              HorizontalOptions="Fill"
+              FontAttributes="Bold" 
+              CornerRadius="5" 
+              HeightRequest="50" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

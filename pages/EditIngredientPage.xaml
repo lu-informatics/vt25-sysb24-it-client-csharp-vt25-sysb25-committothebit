@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:ct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+          x:Class="MauiApp1.EditIngredientPopup">
+  <VerticalStackLayout Padding="20" Spacing="15">
+    <Label Text="Edit Ingredient" FontAttributes="Bold" FontSize="Medium"/>
+    <!-- Read-only display for Ingredient ID -->
+    <Label x:Name="IdLabel" />
+    <Entry x:Name="NameEntry" Placeholder="Name" />
+    <Entry x:Name="CategoryEntry" Placeholder="Category" />
+    <Entry x:Name="UnitEntry" Placeholder="Unit" />
+    <Entry x:Name="DietTagEntry" Placeholder="Diet Tag" />
+    <HorizontalStackLayout Spacing="10">
+      <Button Text="Save" Clicked="OnSaveClicked" />
+      <Button Text="Cancel" Clicked="OnCancelClicked" />
+    </HorizontalStackLayout>
+  </VerticalStackLayout>
+</ct:Popup>

@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.AddIngredientPage"
+             Title="Add Ingredient">
+
+  <ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="15">
+      <!-- Display Ingredient ID (read-only) -->
+      <Label x:Name="IdLabel" Text="(New Ingredient)" />
+      <Entry x:Name="NameEntry" Placeholder="Name" />
+      <Entry x:Name="CategoryEntry" Placeholder="Category" />
+      <Entry x:Name="UnitEntry" Placeholder="Unit" />
+      <Entry x:Name="DietTagEntry" Placeholder="Diet Tag" />
+      <Button Text="Save" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

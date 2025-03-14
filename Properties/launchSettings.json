@@ -1,0 +1,16 @@
+{
+  "profiles": {
+  "Windows Machine": {
+  "commandName": "Project",
+  "nativeDebugging": false
+  },
+  "MauiApp": {
+  "commandName": "Project",
+  "environmentVariables": {
+  "DOTNET_ENVIRONMENT": "Development"
+  },
+  "nativeDebugging": false
+  }
+  }
+  }
+  

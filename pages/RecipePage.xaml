@@ -1,0 +1,59 @@
+<ContentPage x:Name="RecipePageRoot"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.RecipePage"
+             Title="Recipes">
+  <ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="10">
+      <!-- Add Recipe Button -->
+      <Button Text="Add Recipe"
+              Command="{Binding AddCommand}"
+              HorizontalOptions="Fill"
+              FontAttributes="Bold"
+              CornerRadius="5"
+              HeightRequest="50" />
+      <!-- Refresh Button -->
+      <Button Text="Refresh Recipes"
+              Command="{Binding RefreshCommand}"
+              HorizontalOptions="Fill"
+              FontAttributes="Bold"
+              CornerRadius="5"
+              HeightRequest="50" />
+      <!-- List of Recipes -->
+      <CollectionView ItemsSource="{Binding Recipes}">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Frame Margin="5" Padding="10" CornerRadius="5" BorderColor="#cccccc">
+              <VerticalStackLayout>
+                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
+                <Label Text="{Binding Data}" />
+                <Label Text="{Binding CookingTime, StringFormat='Cooking Time: {0} mins'}" />
+                <Label Text="{Binding Servings, StringFormat='Servings: {0}'}" />
+                <Label Text="{Binding DifficultyLevel}" />
+                <Label Text="Ingredients:" Margin="0,10,0,0" FontAttributes="Bold" />
+                <CollectionView ItemsSource="{Binding IngredientNames}">
+                  <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                      <Frame Margin="5" Padding="10" CornerRadius="5" BorderColor="#dddddd">
+                        <Label Text="{Binding .}" />
+                      </Frame>
+                    </DataTemplate>
+                  </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!-- Edit and Delete Buttons -->
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="End">
+                  <Button Text="Edit"
+                          Command="{Binding Source={x:Reference RecipePageRoot}, Path=BindingContext.EditCommand}"
+                          CommandParameter="{Binding .}" />
+                  <Button Text="Delete"
+                          Command="{Binding Source={x:Reference RecipePageRoot}, Path=BindingContext.DeleteCommand}"
+                          CommandParameter="{Binding .}" />
+                </HorizontalStackLayout>
+              </VerticalStackLayout>
+            </Frame>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
