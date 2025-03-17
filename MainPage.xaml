@@ -3,42 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Appetite.MauiDbClient.MainPage"
              Title="Home">
-  <ScrollView>
-    <VerticalStackLayout Padding="30" Spacing="25">
-      <Image
-          Source="dotnet_bot.png"
-          HeightRequest="185"
-          Aspect="AspectFit"
-          SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+  <!-- Set a linear gradient background similar to the JavaFX style -->
+  <ContentPage.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+      <GradientStop Color="#1e3c72" Offset="0.0" />
+      <GradientStop Color="#2a5298" Offset="1.0" />
+    </LinearGradientBrush>
+  </ContentPage.Background>
 
-      <Label
-          Text="Hello!"
-          Style="{StaticResource Headline}"
-          SemanticProperties.HeadingLevel="Level1" />
+  <!-- Use a Grid to center the "card" container -->
+  <Grid Padding="20">
+    <Frame BackgroundColor="#CCFFFFFF" CornerRadius="10" Padding="30"
+           HorizontalOptions="Center" VerticalOptions="Center" HasShadow="True">
+      <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
+        <!-- ImageView similar to JavaFX (update image source as needed) -->
+        <Image Source="bonappetitee.png" 
+               HeightRequest="300" 
+               Aspect="AspectFit" />
 
-      <Label
-          Text="This is an C# maui client"
-          Style="{StaticResource SubHeadline}"
-          SemanticProperties.HeadingLevel="Level2"
-          SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+        <!-- Heading label -->
+        <Label Text="Welcome to the C# MAUI Client"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="#333"
+               HorizontalTextAlignment="Center" />
 
-      <!-- Existing button example -->
-      
+        <!-- Subheading label -->
+        <Label Text="Experience seamless connectivity with our REST API"
+               FontSize="16"
+               TextColor="#555"
+               HorizontalTextAlignment="Center" />
 
-      <!-- New Navigation Buttons -->
-      <Button Text="View Ingredients" 
-              Clicked="OnIngredientsClicked" 
-              HorizontalOptions="Fill"
-              FontAttributes="Bold" 
-              CornerRadius="5" 
-              HeightRequest="50" />
+        <!-- Navigation Buttons -->
+        <Button Text="View Ingredients" 
+                Clicked="OnIngredientsClicked" 
+                FontSize="16"
+                Padding="10,20"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="8" />
 
-      <Button Text="View Recipes" 
-              Clicked="OnRecipesClicked" 
-              HorizontalOptions="Fill"
-              FontAttributes="Bold" 
-              CornerRadius="5" 
-              HeightRequest="50" />
-    </VerticalStackLayout>
-  </ScrollView>
+        <Button Text="View Recipes" 
+                Clicked="OnRecipesClicked" 
+                FontSize="16"
+                Padding="10,20"
+                BackgroundColor="#FF5722"
+                TextColor="White"
+                CornerRadius="8" />
+      </VerticalStackLayout>
+    </Frame>
+  </Grid>
 </ContentPage>
