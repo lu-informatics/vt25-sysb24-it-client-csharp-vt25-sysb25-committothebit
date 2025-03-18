@@ -39,7 +39,6 @@ namespace MauiApp1
             if (ingredient != null)
             {
                 // Populate UI fields and show the read-only Id
-                IdLabel.Text = $"ID: {ingredient.Id}";
                 NameEntry.Text = ingredient.Name;
                 CategoryEntry.Text = ingredient.Category;
                 UnitEntry.Text = ingredient.Unit;
