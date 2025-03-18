@@ -13,7 +13,7 @@
               FontAttributes="Bold"
               CornerRadius="8"
               HeightRequest="50"
-              BackgroundColor= "#2a5298" 
+              BackgroundColor= "#4CAF50"
               TextColor="White"/>
       <Button Text="Refresh Ingredients"
               Command="{Binding RefreshCommand}"
@@ -54,7 +54,7 @@
                   <Button Text="Delete"
                           Command="{Binding Source={x:Reference IngredientPageRoot}, Path=BindingContext.DeleteCommand}"
                           CommandParameter="{Binding .}"
-                          BackgroundColor ="#2a5298" 
+                          BackgroundColor ="#FFD51717"
                           FontSize="Small"/>
                 </HorizontalStackLayout>
               </VerticalStackLayout>

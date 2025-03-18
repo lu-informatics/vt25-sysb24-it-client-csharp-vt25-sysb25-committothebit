@@ -13,7 +13,7 @@
               FontAttributes="Bold"
               CornerRadius="8"
               HeightRequest="50"
-              BackgroundColor= "#2a5298"
+              BackgroundColor= "#4CAF50"
               TextColor="White"/>
       <Button Text="Refresh Recipes"
               Command="{Binding RefreshCommand}"
@@ -65,7 +65,8 @@
                   </CollectionView.ItemTemplate>
                 </CollectionView>
                 <HorizontalStackLayout Spacing="10"
-                                        HorizontalOptions="End">
+                                        HorizontalOptions="End"
+                                        Margin="0,10,0,0">
                   <Button Text="Edit"
                           Command="{Binding Source={x:Reference RecipePageRoot}, Path=BindingContext.EditCommand}"
                           CommandParameter="{Binding .}"
@@ -74,7 +75,7 @@
                   <Button Text="Delete"
                           Command="{Binding Source={x:Reference RecipePageRoot}, Path=BindingContext.DeleteCommand}"
                           CommandParameter="{Binding .}"
-                          BackgroundColor="#2a5298"
+                          BackgroundColor="#FFD51717"
                           FontSize="Small"/>
                 </HorizontalStackLayout>
               </VerticalStackLayout>
