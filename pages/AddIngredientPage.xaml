@@ -11,7 +11,7 @@
       <Entry x:Name="CategoryEntry" Placeholder="Category" />
       <Entry x:Name="UnitEntry" Placeholder="Unit" />
       <Entry x:Name="DietTagEntry" Placeholder="Diet Tag" />
-      <Button Text="Save" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
+      <Button Text="Save" BackgroundColor="#2a5298" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
     </VerticalStackLayout>
   </ScrollView>
 </ContentPage>
