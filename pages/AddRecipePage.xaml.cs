@@ -36,7 +36,7 @@ namespace MauiApp1
             var recipe = await _recipeService.GetRecipeAsync(id);
             if (recipe != null)
             {
-                IdLabel.Text = $"ID: {recipe.Id}";
+               
                 NameEntry.Text = recipe.Name;
                 DataEntry.Text = recipe.Data;
                 CookingTimeEntry.Text = recipe.CookingTime.ToString();
