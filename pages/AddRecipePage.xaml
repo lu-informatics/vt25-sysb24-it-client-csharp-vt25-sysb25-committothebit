@@ -5,14 +5,14 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <!-- Recipe ID (read-only) -->
-            <Label x:Name="IdLabel" Text="(New Recipe)" />
+            
             <Entry x:Name="NameEntry" Placeholder="Name" />
             <Entry x:Name="DataEntry" Placeholder="Data (Recipe details)" />
             <Entry x:Name="CookingTimeEntry" Placeholder="Cooking Time (in mins)" Keyboard="Numeric"/>
             <Entry x:Name="ServingsEntry" Placeholder="Servings" Keyboard="Numeric"/>
             <Entry x:Name="DifficultyLevelEntry" Placeholder="Difficulty Level" />
             <Entry x:Name="IngredientNamesEntry" Placeholder="Ingredient Names (comma separated)" />
-            <Button Text="Save" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
+            <Button Text="Save" BackgroundColor="#2a5298" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

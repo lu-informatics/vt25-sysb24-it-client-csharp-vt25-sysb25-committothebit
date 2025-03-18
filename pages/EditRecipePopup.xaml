@@ -1,21 +1,37 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           xmlns:ct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
           x:Class="MauiApp1.EditRecipePopup">
-  <VerticalStackLayout Padding="20" Spacing="15">
-    <Label Text="Edit Recipe" FontAttributes="Bold" FontSize="Medium"/>
-    <!-- Read-only display for Recipe ID -->
-    <Label x:Name="IdLabel" />
-    <Entry x:Name="NameEntry" Placeholder="Name" />
-    <Entry x:Name="DataEntry" Placeholder="Data (Recipe details)" />
-    <Entry x:Name="CookingTimeEntry" Placeholder="Cooking Time (in mins)" Keyboard="Numeric"/>
-    <Entry x:Name="ServingsEntry" Placeholder="Servings" Keyboard="Numeric"/>
-    <Entry x:Name="DifficultyLevelEntry" Placeholder="Difficulty Level" />
-    <Entry x:Name="IngredientNamesEntry" Placeholder="Ingredient Names (comma separated)" />
-    <HorizontalStackLayout Spacing="10">
-      <Button Text="Save" Clicked="OnSaveClicked" />
-      <Button Text="Cancel" Clicked="OnCancelClicked" />
-    </HorizontalStackLayout>
-  </VerticalStackLayout>
+  <Frame BackgroundColor="White"
+         Padding="20"
+         CornerRadius="10">
+    <VerticalStackLayout Spacing="15">
+      <Label Text="Edit Recipe"
+             FontAttributes="Bold"
+             FontSize="Medium"
+             HorizontalOptions="Center"/>
+      <!-- Read-only display for Recipe ID -->
+      <Label x:Name="IdLabel"
+             TextColor="Gray"
+             HorizontalOptions="Center"/>
+      <Entry x:Name="NameEntry" Placeholder="Name" Margin="0,5"/>
+      <Entry x:Name="DataEntry" Placeholder="Data (Recipe details)" Margin="0,5"/>
+      <Entry x:Name="CookingTimeEntry" Placeholder="Cooking Time (in mins)" Keyboard="Numeric" Margin="0,5"/>
+      <Entry x:Name="ServingsEntry" Placeholder="Servings" Keyboard="Numeric" Margin="0,5"/>
+      <Entry x:Name="DifficultyLevelEntry" Placeholder="Difficulty Level" Margin="0,5"/>
+      <Entry x:Name="IngredientNamesEntry" Placeholder="Ingredient Names (comma separated)" Margin="0,5"/>
+      <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+        <Button Text="Save"
+                Clicked="OnSaveClicked"
+                CornerRadius="8"
+                BackgroundColor= "#2a5298"
+                TextColor="White"/>
+        <Button Text="Cancel"
+                Clicked="OnCancelClicked"
+                CornerRadius="8"
+                BackgroundColor= "#2a5298"
+                TextColor="White"/>
+      </HorizontalStackLayout>
+    </VerticalStackLayout>
+  </Frame>
 </ct:Popup>

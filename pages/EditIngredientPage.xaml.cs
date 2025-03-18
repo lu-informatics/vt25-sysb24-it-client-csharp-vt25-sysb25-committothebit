@@ -1,6 +1,9 @@
 using Appetite.MauiDbClient;
 using CommunityToolkit.Maui.Views;
 using Microsoft.Maui.Controls;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace MauiApp1
 {
@@ -22,15 +25,50 @@ namespace MauiApp1
             DietTagEntry.Text = ingredient.DietTag;
         }
 
-        private void OnSaveClicked(object sender, EventArgs e)
+        private async void OnSaveClicked(object sender, EventArgs e)
         {
+            // Trim and validate inputs
+            string name = NameEntry.Text?.Trim() ?? "";
+            string category = CategoryEntry.Text?.Trim() ?? "";
+            string unit = UnitEntry.Text?.Trim() ?? "";
+            string dietTag = DietTagEntry.Text?.Trim() ?? "";
+            
+            // Regex pattern to allow only letters and spaces
+            string lettersPattern = @"^[a-zA-Z\s]+$";
+
+            if (string.IsNullOrWhiteSpace(name) || !Regex.IsMatch(name, lettersPattern))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a valid Name (letters and spaces only).", "OK");
+                return;
+            }
+            
+            if (string.IsNullOrWhiteSpace(category) || !Regex.IsMatch(category, lettersPattern))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a valid Category (letters and spaces only).", "OK");
+                return;
+            }
+            
+            if (string.IsNullOrWhiteSpace(unit) || !Regex.IsMatch(unit, lettersPattern))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a valid Unit (letters and spaces only).", "OK");
+                return;
+            }
+
+            // Validate Diet Tag field to ensure it's one of the allowed values.
+            var validDietTags = new List<string> { "Non-Vegetarian", "Pescatarian", "Vegetarian", "Vegan" };
+            if (!validDietTags.Contains(dietTag))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a valid diet tag (Non-Vegetarian, Pescatarian, Vegetarian, or Vegan).", "OK");
+                return;
+            }
+
             // Create a new record with updated values while preserving the Id
             Ingredient = Ingredient with
             {
-                Name = NameEntry.Text,
-                Category = CategoryEntry.Text,
-                Unit = UnitEntry.Text,
-                DietTag = DietTagEntry.Text
+                Name = name,
+                Category = category,
+                Unit = unit,
+                DietTag = dietTag
             };
 
             // Close the popup and return the updated ingredient

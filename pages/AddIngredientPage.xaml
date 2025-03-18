@@ -6,12 +6,12 @@
   <ScrollView>
     <VerticalStackLayout Padding="20" Spacing="15">
       <!-- Display Ingredient ID (read-only) -->
-      <Label x:Name="IdLabel" Text="(New Ingredient)" />
+      
       <Entry x:Name="NameEntry" Placeholder="Name" />
       <Entry x:Name="CategoryEntry" Placeholder="Category" />
       <Entry x:Name="UnitEntry" Placeholder="Unit" />
       <Entry x:Name="DietTagEntry" Placeholder="Diet Tag" />
-      <Button Text="Save" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
+      <Button Text="Save" BackgroundColor="#2a5298" Clicked="OnSaveClicked" HorizontalOptions="Fill" />
     </VerticalStackLayout>
   </ScrollView>
 </ContentPage>
